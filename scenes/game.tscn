@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://dfq2iqhuccltx"]
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://6rt6j4h172du" path="res://scenes/exercise_object.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://btcv4jfdtv7s3" path="res://scenes/exercise_object.gd" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=1124704062]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2009644118]
-position = Vector2(576, 324.5)
-scale = Vector2(2.9895833, 1.0015625)
+position = Vector2(27, -0.99999994)
+scale = Vector2(1.09375, 0.85859376)
 texture = ExtResource("1_uwrxv")
+
+[node name="Player" parent="." unique_id=874701783 instance=ExtResource("2_yqjtg")]
+position = Vector2(-1, 0)
+
+[node name="ExerciseObject" parent="." unique_id=222470427 instance=ExtResource("3_lnu2h")]
+position = Vector2(-3, 181)
+script = ExtResource("4_lbhrr")
