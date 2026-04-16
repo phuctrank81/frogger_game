@@ -3,7 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bvow1in7idxld" path="res://scenes/player.gd" id="1_g2els"]
 
-[node name="Player" type="Node2D" unique_id=874701783]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(12, 8)
+
+[node name="Player" type="CharacterBody2D" unique_id=1249222572]
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830995491]
@@ -15,3 +18,6 @@ limit_left = -162
 limit_top = -275
 limit_right = 162
 limit_bottom = 264
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=594302072]
+shape = SubResource("RectangleShape2D_g2els")
