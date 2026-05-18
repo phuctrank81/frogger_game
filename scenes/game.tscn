@@ -19,12 +19,6 @@ position = Vector2(27, -0.99999994)
 scale = Vector2(1.09375, 0.85859376)
 texture = ExtResource("1_uwrxv")
 
-[node name="Player" parent="." unique_id=874701783 instance=ExtResource("2_yqjtg")]
-position = Vector2(-1, 0)
-
-[node name="Tree" parent="." unique_id=222470427 instance=ExtResource("3_lnu2h")]
-position = Vector2(-3, 181)
-
 [node name="Borders" type="Node2D" parent="." unique_id=1861156936]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=121433141]
@@ -59,7 +53,41 @@ polygon = PackedVector2Array(-179, -270, -178, -114, 231, -117, 231, -270)
 [node name="Timer" type="Node" parent="." unique_id=164667095]
 
 [node name="CarTimer" type="Timer" parent="Timer" unique_id=1192900001]
-wait_time = 4.0
 autostart = true
 
+[node name="Objects" type="Node2D" parent="." unique_id=483170998]
+
+[node name="Player" parent="Objects" unique_id=874701783 instance=ExtResource("2_yqjtg")]
+position = Vector2(-1, 0)
+
+[node name="Tree" parent="Objects" unique_id=222470427 instance=ExtResource("3_lnu2h")]
+position = Vector2(-3, 181)
+
+[node name="CarStartPositions" type="Node2D" parent="." unique_id=346193208]
+
+[node name="Marker2D" type="Marker2D" parent="CarStartPositions" unique_id=374761656]
+position = Vector2(-194, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="CarStartPositions" unique_id=522402515]
+position = Vector2(-195, -81)
+
+[node name="Marker2D3" type="Marker2D" parent="CarStartPositions" unique_id=1763334726]
+position = Vector2(-193, -19)
+
+[node name="Marker2D4" type="Marker2D" parent="CarStartPositions" unique_id=1125404738]
+position = Vector2(-192, 80)
+
+[node name="Marker2D5" type="Marker2D" parent="CarStartPositions" unique_id=1075120321]
+position = Vector2(248, 117)
+
+[node name="Marker2D6" type="Marker2D" parent="CarStartPositions" unique_id=1932982175]
+position = Vector2(-193, 139)
+
+[node name="Marker2D7" type="Marker2D" parent="CarStartPositions" unique_id=1764862561]
+position = Vector2(246, -46)
+
+[node name="Marker2D8" type="Marker2D" parent="CarStartPositions" unique_id=1391947286]
+position = Vector2(248, -103)
+
 [connection signal="body_entered" from="Borders/FinishArea2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer/CarTimer" to="." method="_on_car_timer_timeout"]
