@@ -1,6 +1,7 @@
 extends Node2D
 
 var car_scene: PackedScene = preload("res://scenes/car.tscn")
+var score: int 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)
@@ -17,4 +18,10 @@ func _on_car_timer_timeout() -> void:
 func go_to_title(body):
 	print(body)
 	print('Player car collision')
+	
+
+
+func _on_score_timer_timeout() -> void:
+	score += 1
+	$CanvasLayer/Label.text = 'Time elapsed: ' + str(score)
 	
