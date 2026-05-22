@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cv8cli0ov53f1" path="res://graphics/objects/box2.png" id="10_trtic"]
 [ext_resource type="Texture2D" uid="uid://d0dya2slufckd" path="res://graphics/cars/green.png" id="11_ir15t"]
 [ext_resource type="Texture2D" uid="uid://cgvtilagem3np" path="res://graphics/objects/red car.png" id="12_dinhu"]
+[ext_resource type="Texture2D" uid="uid://boj6kq1t4mduj" path="res://graphics/objects/tree potted.png" id="13_kvuet"]
+[ext_resource type="Texture2D" uid="uid://d1h0ksxlju0ou" path="res://graphics/objects/house1.png" id="14_trtic"]
+[ext_resource type="Texture2D" uid="uid://y3ndpd5bhsi3" path="res://graphics/objects/tree2.png" id="15_ir15t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
 size = Vector2(20, 607)
@@ -30,6 +33,18 @@ size = Vector2(16, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
 size = Vector2(14, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtic"]
+size = Vector2(12, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
+size = Vector2(12, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
+size = Vector2(96, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
+size = Vector2(14, 27)
 
 [node name="Game" type="Node2D" unique_id=1124704062]
 script = ExtResource("1_lbhrr")
@@ -85,6 +100,7 @@ polygon = PackedVector2Array(-179, -270, -178, -114, 231, -117, 231, -270)
 [node name="Timer" type="Node" parent="." unique_id=164667095]
 
 [node name="CarTimer" type="Timer" parent="Timer" unique_id=1192900001]
+wait_time = 0.15
 autostart = true
 
 [node name="Objects" type="Node2D" parent="." unique_id=483170998]
@@ -212,6 +228,76 @@ shape = SubResource("RectangleShape2D_dinhu")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=1615784640]
 position = Vector2(212, 54)
 shape = SubResource("RectangleShape2D_dinhu")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=1291583658]
+position = Vector2(-119, -74)
+shape = SubResource("RectangleShape2D_trtic")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=277249596]
+position = Vector2(-40, -75)
+shape = SubResource("RectangleShape2D_kvuet")
+
+[node name="TreePotted" type="Sprite2D" parent="Objects/Stuff" unique_id=392673818]
+position = Vector2(-119, -76)
+texture = ExtResource("13_kvuet")
+
+[node name="TreePotted2" type="Sprite2D" parent="Objects/Stuff" unique_id=867998562]
+position = Vector2(-40, -77)
+texture = ExtResource("13_kvuet")
+
+[node name="House" type="StaticBody2D" parent="Objects" unique_id=363138548]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/House" unique_id=805403961]
+position = Vector2(175, 212)
+texture = ExtResource("14_trtic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/House" unique_id=792767479]
+position = Vector2(175, 212)
+shape = SubResource("RectangleShape2D_ir15t")
+
+[node name="House2" type="StaticBody2D" parent="Objects" unique_id=2099454364]
+position = Vector2(0, -454)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/House2" unique_id=2019432852]
+position = Vector2(175, 212)
+texture = ExtResource("14_trtic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/House2" unique_id=2138916556]
+position = Vector2(175, 212)
+shape = SubResource("RectangleShape2D_ir15t")
+
+[node name="Tree10" type="StaticBody2D" parent="Objects" unique_id=1415922094]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Tree10" unique_id=1783307745]
+position = Vector2(-140, -210)
+texture = ExtResource("15_ir15t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree10" unique_id=1047700729]
+position = Vector2(-140, -209.5)
+shape = SubResource("RectangleShape2D_ssvqc")
+
+[node name="Tree11" type="StaticBody2D" parent="Objects" unique_id=400816981]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Tree11" unique_id=569428648]
+position = Vector2(-140, -210)
+texture = ExtResource("15_ir15t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree11" unique_id=466891487]
+position = Vector2(-140, -209.5)
+shape = SubResource("RectangleShape2D_ssvqc")
+
+[node name="Tree12" type="StaticBody2D" parent="Objects" unique_id=464794699]
+position = Vector2(50, -1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Tree12" unique_id=1156240808]
+position = Vector2(-140, -210)
+texture = ExtResource("15_ir15t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree12" unique_id=37049650]
+position = Vector2(-140, -209.5)
+shape = SubResource("RectangleShape2D_ssvqc")
 
 [node name="CarStartPositions" type="Node2D" parent="." unique_id=346193208]
 metadata/_edit_lock_ = true
