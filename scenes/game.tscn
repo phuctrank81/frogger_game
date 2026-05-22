@@ -29,7 +29,7 @@ size = Vector2(20, 14)
 size = Vector2(16, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
-size = Vector2(14, 18)
+size = Vector2(14, 19)
 
 [node name="Game" type="Node2D" unique_id=1124704062]
 script = ExtResource("1_lbhrr")
@@ -107,6 +107,15 @@ position = Vector2(145, 16)
 
 [node name="Tree3" parent="Objects" unique_id=708780236 instance=ExtResource("3_lnu2h")]
 position = Vector2(-4, 217)
+
+[node name="Tree7" parent="Objects" unique_id=54438380 instance=ExtResource("3_lnu2h")]
+position = Vector2(25, 216)
+
+[node name="Tree8" parent="Objects" unique_id=495868045 instance=ExtResource("3_lnu2h")]
+position = Vector2(-14, 211)
+
+[node name="Tree9" parent="Objects" unique_id=275086029 instance=ExtResource("3_lnu2h")]
+position = Vector2(24, 196)
 
 [node name="Tree4" parent="Objects" unique_id=1146542179 instance=ExtResource("3_lnu2h")]
 position = Vector2(92, 211)
@@ -197,7 +206,7 @@ shape = SubResource("RectangleShape2D_rysoc")
 polygon = PackedVector2Array(15, 37, 15, 46, 11, 46, 9, 44, 9, 34, 22, 34, 22, 53, 24, 53, 24, 61, 19, 61, 19, 53, 19, 36, 15, 36)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=287700730]
-position = Vector2(185, 54)
+position = Vector2(184, 54)
 shape = SubResource("RectangleShape2D_dinhu")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=1615784640]
