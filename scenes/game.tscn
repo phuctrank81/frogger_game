@@ -4,12 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://6rt6j4h172du" path="res://scenes/tree.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c74s4fvhlodb5" path="res://scenes/box.tscn" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://cxutqp0hti8vw" path="res://graphics/objects/bench.png" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://c5iy3tuxd0vaw" path="res://graphics/objects/barrier.png" id="7_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://cfe22lwgaf1k2" path="res://graphics/objects/traffic.png" id="8_dinhu"]
+[ext_resource type="Texture2D" uid="uid://y78osdw0bolc" path="res://graphics/objects/box1.png" id="9_kvuet"]
+[ext_resource type="Texture2D" uid="uid://cv8cli0ov53f1" path="res://graphics/objects/box2.png" id="10_trtic"]
+[ext_resource type="Texture2D" uid="uid://d0dya2slufckd" path="res://graphics/cars/green.png" id="11_ir15t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
 size = Vector2(20, 607)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
 size = Vector2(422, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(8, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
+size = Vector2(20, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rysoc"]
+size = Vector2(16, 11)
 
 [node name="Game" type="Node2D" unique_id=1124704062]
 script = ExtResource("1_lbhrr")
@@ -18,34 +34,46 @@ script = ExtResource("1_lbhrr")
 position = Vector2(27, -0.99999994)
 scale = Vector2(1.09375, 0.85859376)
 texture = ExtResource("1_uwrxv")
+metadata/_edit_lock_ = true
 
 [node name="Borders" type="Node2D" parent="." unique_id=1861156936]
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=121433141]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=897454779]
 position = Vector2(-193, -19)
 shape = SubResource("RectangleShape2D_lnu2h")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Borders" unique_id=274179311]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2" unique_id=3941602]
 position = Vector2(247, 16)
 shape = SubResource("RectangleShape2D_lnu2h")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Borders" unique_id=1349927911]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3" unique_id=1083958866]
 position = Vector2(28, -286)
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Borders" unique_id=1646707296]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4" unique_id=1067344597]
 position = Vector2(27, 284)
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="FinishArea2D" type="Area2D" parent="Borders" unique_id=798683501]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders/FinishArea2D" unique_id=997956408]
 polygon = PackedVector2Array(-179, -270, -178, -114, 231, -117, 231, -270)
@@ -56,6 +84,7 @@ polygon = PackedVector2Array(-179, -270, -178, -114, 231, -117, 231, -270)
 autostart = true
 
 [node name="Objects" type="Node2D" parent="." unique_id=483170998]
+y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=874701783 instance=ExtResource("2_yqjtg")]
 position = Vector2(-1, 0)
@@ -63,7 +92,94 @@ position = Vector2(-1, 0)
 [node name="Tree" parent="Objects" unique_id=222470427 instance=ExtResource("3_lnu2h")]
 position = Vector2(-3, 181)
 
+[node name="Tree2" parent="Objects" unique_id=1310399065 instance=ExtResource("3_lnu2h")]
+position = Vector2(38, 189)
+
+[node name="Tree3" parent="Objects" unique_id=708780236 instance=ExtResource("3_lnu2h")]
+position = Vector2(-4, 217)
+
+[node name="Tree4" parent="Objects" unique_id=1146542179 instance=ExtResource("3_lnu2h")]
+position = Vector2(92, 211)
+
+[node name="Box" parent="Objects" unique_id=988414270 instance=ExtResource("5_iywne")]
+position = Vector2(94, 187)
+
+[node name="Bench" type="StaticBody2D" parent="Objects" unique_id=1357713056]
+position = Vector2(27, 138)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Bench" unique_id=201664566]
+position = Vector2(102, 23)
+texture = ExtResource("6_p57ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bench" unique_id=802524605]
+position = Vector2(102, 23.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="Bench2" type="StaticBody2D" parent="Objects" unique_id=867408538]
+position = Vector2(-2, 140)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Bench2" unique_id=2087179106]
+position = Vector2(102, 23)
+texture = ExtResource("6_p57ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bench2" unique_id=1980750468]
+position = Vector2(102, 23.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="Bench3" type="StaticBody2D" parent="Objects" unique_id=626519452]
+position = Vector2(-50, 142)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Bench3" unique_id=338369952]
+position = Vector2(102, 23)
+texture = ExtResource("6_p57ef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bench3" unique_id=1820252779]
+position = Vector2(102, 23.5)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="Stuff" type="Node2D" parent="Objects" unique_id=1497633814]
+
+[node name="Barrier" type="Sprite2D" parent="Objects/Stuff" unique_id=1585824211]
+position = Vector2(12, 16)
+texture = ExtResource("7_kvpfn")
+
+[node name="Traffic" type="Sprite2D" parent="Objects/Stuff" unique_id=1892615753]
+position = Vector2(17, 48)
+texture = ExtResource("8_dinhu")
+
+[node name="Box1" type="Sprite2D" parent="Objects/Stuff" unique_id=248359532]
+position = Vector2(-27, 28)
+texture = ExtResource("9_kvuet")
+
+[node name="Box2" type="Sprite2D" parent="Objects/Stuff" unique_id=1008314144]
+position = Vector2(-17, 34)
+texture = ExtResource("10_trtic")
+
+[node name="Green" type="Sprite2D" parent="Objects/Stuff" unique_id=314355247]
+position = Vector2(-56, 49)
+texture = ExtResource("11_ir15t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects/Stuff" unique_id=520449291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=334591086]
+position = Vector2(-56, 49)
+shape = SubResource("RectangleShape2D_ca42v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Objects/Stuff/StaticBody2D" unique_id=1818080607]
+polygon = PackedVector2Array(-33, 24, -21, 24, -21, 29, -11, 29, -11, 38, -22, 38, -22, 33, -33, 33)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Stuff/StaticBody2D" unique_id=535997627]
+position = Vector2(12, 16.5)
+shape = SubResource("RectangleShape2D_rysoc")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Objects/Stuff/StaticBody2D" unique_id=80186672]
+polygon = PackedVector2Array(15, 37, 15, 46, 11, 46, 9, 44, 9, 34, 22, 34, 22, 53, 24, 53, 24, 61, 19, 61, 19, 53, 19, 36, 15, 36)
+
 [node name="CarStartPositions" type="Node2D" parent="." unique_id=346193208]
+metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="CarStartPositions" unique_id=374761656]
 position = Vector2(-194, 0)
