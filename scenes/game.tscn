@@ -111,7 +111,7 @@ autostart = true
 y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=874701783 instance=ExtResource("2_yqjtg")]
-position = Vector2(-1, 0)
+position = Vector2(19, 161)
 
 [node name="Tree" parent="Objects" unique_id=222470427 instance=ExtResource("3_lnu2h")]
 position = Vector2(-3, 181)
@@ -333,7 +333,7 @@ position = Vector2(248, -103)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1909812027]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1219245624]
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -41.0
